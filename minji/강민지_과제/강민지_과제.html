@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {margin:0; padding:0;}
+		#wrap {width:100%;}
+		#content {display:flex; flex-direction: column; justify-content: center; align-items: center; padding-top:100px;}
+		#content h1 {text-align:center; font-size:25px; line-height:30px; margin-bottom:50px; color:#333;}
+		#content section img {width:500px; height:auto; }
+		#content button {display:flex; justify-content: center; align-items: center; width:200px; height:60px; background-color:powderblue; border:1px solid #bee0ff; margin-top:20px; cursor: pointer; border-radius:5px; color:#ffffff; font-weight:600; font-size:20px;}
+
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="content">
+			<h1>갤러리</h1>
+			<section class="imgFrame">
+				<img src="img1.jpg" />
+			</section>
+			<button class="btn" onclick="randomImg()">눌러보세요</button>
+		</div>
+	</div>
+  <script>
+    function randomImg() {
+      
+      function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min; //최댓값도 포함, 최솟값도 포함
+      }
+      let getNum = getRandomIntInclusive(1, 4);
+      console.log(getNum);
+
+			let imgEl = document.querySelector('img')
+			imgEl.setAttribute('src', 'img'+getNum+'.jpg')
+
+    }
+  </script>
+</body>
+</html>

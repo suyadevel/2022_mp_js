@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <div class="content-wrapper">
+    <div>
+      <h2 class="content-title" id="first">
+        First Accodian
+        <div class="arrow"></div>
+      </h2>
+      <p class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur repellat aut nobis molestiae deleniti obcaecati quae repudiandae? Consectetur, accusamus, enim minima modi quisquam exercitationem, quas nisi eum odit fugit incidunt.
+      </p>
+    </div>
+    <div>
+      <h2 class="content-title">
+        Second Accodian
+        <div class="arrow"></div>
+      </h2>
+      <p class="content"> 
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. A sit, cum deserunt ipsam illo sequi deleniti. Iste sapiente quo in culpa et praesentium tempora laboriosam, cum, laudantium repudiandae ratione ullam!
+      </p>
+    </div>
+    <div>
+      <h2 class="content-title">
+        Third Accodian
+        <div class="arrow"></div>
+      </h2>
+      <p class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem eos error magni rem debitis exercitationem soluta sapiente voluptates veniam beatae laudantium tempore reiciendis voluptas, omnis necessitatibus enim, esse explicabo ratione!
+      </p>
+    </div>
+    <div>
+      <h2 class="content-title">
+        Fourth Accodian
+        <div class="arrow"></div>
+      </h2>
+      <p class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime consectetur iusto consequuntur aperiam sunt placeat, velit quas ullam rerum distinctio quod veniam eius, nemo repellat. A, explicabo. Vitae, reprehenderit nulla.
+      </p>
+    </div>
+  </div>
+  
+  <script>
+    const titleEls = document.querySelectorAll('h2');
+    const arrowEls = document.querySelectorAll('h2>div');
+    let count = 0;
+    titleEls.forEach(function(e){
+      e.addEventListener('click', function(){
+        count++;
+        if(count % 2 == 1){
+          this.nextElementSibling.classList.add('active');
+          // this.children.classList.add('active-arrow');
+        }else{
+          this.nextElementSibling.classList.remove('active');
+          // this.children.classList.remove('active-arrow');
+        }
+      })
+    })
+    //1. this.nextElementSibling.nextElementSibling.classList.add('active');
+    
+    //2. const title = document.querySelector('#first');
+    // console.log(title.children);
+  </script>
+</body>
+</html>

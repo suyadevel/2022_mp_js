@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>slide</title>
+    <link rel="stylesheet" href="css/transition.css" />
+  </head>
+  <style></style>
+  <body>
+    <section class="content">
+      <p class="desc basic">버튼을 클릭해보세요</p>
+      <p class="desc black">검은색 배경이 나타납니다.</p>
+      <p class="desc white">하얀 배경이 나타납니다.</p>
+
+      <div class="btn_wrap">
+        <a href="#" class="btn_black">dark</a>
+        <a href="#" class="btn_white">light</a>
+      </div>
+    </section>
+
+    <script>
+      const darkBtn = document.querySelector('.btn_black');
+      const lightBtn = document.querySelector('.btn_white');
+      let content = document.querySelector('.content');
+
+      darkBtn.addEventListener('click', function () {
+        content.classList.add('dark');
+        content.classList.remove('light');
+        content.classList.remove('basic');
+      });
+
+      lightBtn.addEventListener('click', function () {
+        content.classList.add('light');
+        content.classList.remove('dark');
+        content.classList.remove('basic');
+      });
+    </script>
+  </body>
+</html>
