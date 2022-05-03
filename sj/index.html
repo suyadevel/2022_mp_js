@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css" type="text/css">
+    <link rel="stylesheet" href="./script.js" type="">
+    <title>HomeWork</title>
+</head>
+<body>
+    <main class="content">
+        <div class="content-inner">
+            <div class="arrow-box">
+                <div class="arrow-left" onclick="prevSlide();">&lt;</div>
+                <div class="arrow-right" onclick="nextSlide();">&gt;</div>
+            </div>
+            <div class="header">
+                <h1>KIMSUJUNG</h1>
+                <div class="gnb">
+                    <div class="menu-box">
+                        <input class="red" type="radio" name="hat-color" value="red" id="hat-color-red"/>
+                        <label class="red" for="hat-color-red">1</label>
+                        <input class="orange" type="radio" name="hat-color" value="orange" id="hat-color-orange"/>
+                        <label class="orange" for="hat-color-orange">2</label>
+                        <input class="yellow" type="radio" name="hat-color" value="yellow" id="hat-color-yellow"/>
+                        <label class="yellow" for="hat-color-yellow">3</label>
+                        <input class="green" type="radio" name="hat-color" value="green" id="hat-color-green"/>
+                        <label class="green" for="hat-color-green">4</label>
+                        <input class="blue" type="radio" name="hat-color" value="blue" id="hat-color-blue"/>
+                        <label class="blue" for="hat-color-blue">5</label>
+                        <input class="indigo" type="radio" name="hat-color" value="indigo" id="hat-color-indigo"/>
+                        <label class="indigo" for="hat-color-indigo">6</label>
+                        <input class="violet" type="radio" name="hat-color" value="violet" id="hat-color-violet"/>
+                        <label class="violet" for="hat-color-violet">7</label>
+                    </div>
+                    <div class="menu-bar">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div> 
+                </div>
+            </div>
+            <div class="homework-wrap">
+                <div class="homework-inner active">
+                    <div class="homework-textbox">
+                        <p>&darr; click &darr;</p>
+                        <div class="flex-box">
+                            <p id="flex-list01">만나서 반갑습니다!</p>
+                            <p id="flex-list02">제 이름은 김수정 입니다 ^^</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="homework-inner">
+                    <div class="calculator">
+                        <div class="calculator-top">
+                            <span id="cancel" onclick="document.querySelector('#output').textContent = ''">C</span>
+                            <span id="output" class="output"></span>
+                        </div>
+                        <div class="calculator-bottom">
+                            <span class="num" onclick="document.querySelector('#output').textContent += '7'">7</span>
+                            <span class="num" onclick="document.querySelector('#output').textContent += '8'">8</span>
+                            <span class="num" onclick="document.querySelector('#output').textContent += '9'">9</span>
+                            <span class="operator" onclick="document.querySelector('#output').textContent +='+'">+</span>
+                            <span class="num" onclick="document.querySelector('#output').textContent += '4'">4</span>
+                            <span class="num" onclick="document.querySelector('#output').textContent += '5'">5</span>
+                            <span class="num" onclick="document.querySelector('#output').textContent += '6'">6</span>
+                            <span class="operator" onclick="document.querySelector('#output').textContent +='-'">-</span>
+                            <span class="num" onclick="document.querySelector('#output').textContent += '1'">1</span>
+                            <span class="num" onclick="document.querySelector('#output').textContent += '2'">2</span>
+                            <span class="num" onclick="document.querySelector('#output').textContent += '3'">3</span>
+                            <span class="operator" onclick="document.querySelector('#output').textContent +='*'">*</span>
+                            <span id="period" onclick="document.querySelector('#output').textContent +='.'">.</span>
+                            <span class="num" onclick="document.querySelector('#output').textContent += '0'">0</span>
+                            <span class="operator" onclick="document.querySelector('#output').textContent = eval(document.querySelector('#output').textContent)"
+                            >=</span>
+                            <span class="operator" onclick="document.querySelector('#output').textContent +='/'">/</span>
+                        </div>
+                      </div>
+                </div>
+                <div class="homework-inner">
+                    <div class="img-box">
+                        <div class="img-main">
+                            <img src="./img/img01.jpg" alt=""> 
+                        </div>
+                        <div class="img-sublist">
+                            <img src="./img/img02.png" alt=""> 
+                            <img src="./img/img03.png" alt=""> 
+                            <img src="./img/img04.png" alt=""> 
+                            <img src="./img/img05.png" alt=""> 
+                            <img src="./img/img06.png" alt=""> 
+                            <img src="./img/img07.png" alt=""> 
+                            <img src="./img/img08.png" alt=""> 
+                            <img src="./img/img09.png" alt=""> 
+                        </div>
+                    </div>
+                </div>
+                <div class="homework-inner">
+                    <form class="loginWrap">
+                        <p>Hello!</p>
+                        <form class="login-list-box">
+                            <input type="text" name="username" placeholder="Username" class="input-username" id="input-username" autocomplete="off" />
+                            <input type="password" name="password" placeholder="Password" class="input-password" id="input-password"  autocomplete="off"/>
+                            <button type="submit" class="btn-login">LOGIN</button>
+                        </form>
+                        <div class="login-text-box">
+                            <p>No account?</p>
+                            <p>Sign up</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // 컬러피커 
+        const els = document.querySelectorAll("input[type='radio']");
+            els.forEach(function (v) {
+            v.addEventListener('click', function () {
+                document.body.style.backgroundColor = this.value;
+            });
+        });
+
+        // 슬라이더
+        const slideHomework = document.querySelectorAll('.homework-inner');
+        let i = 0;
+
+        function prevSlide() {
+            slideHomework[i].classList.remove('active');
+            i = (i - 1 + 4) % 4;
+            slideHomework[i].classList.add('active');
+        }
+        function nextSlide() {
+            slideHomework[i].classList.remove('active');
+            i = (i + 1) % 4;
+            slideHomework[i].classList.add('active');
+        }
+
+        // homework-inner 01 - 이벤트 실습
+        document.querySelector('#flex-list01').addEventListener('click', function () {
+            this.style.display = 'none';
+            this.nextElementSibling.style.display = 'block';
+        });
+        document.querySelector('#flex-list02').addEventListener('click', function () {
+            this.style.display = 'none';
+            this.previousElementSibling.style.display = 'block';
+        });
+
+        // homework-inner 03 - 이미지 갤러리
+        let ing = false;
+        const mainImg = document.querySelector('.img-main img');
+        const imgEls = document.querySelectorAll('.img-sublist img');
+
+        imgEls.forEach(function(el){
+            el.addEventListener('click', function(){
+                if(ing) return; 
+                ing = true;
+                mainImg.src = this.src;
+                mainImg.classList.add('fade-in'); 
+                setTimeout(function(){
+                    mainImg.classList.remove('fade-in');
+                    ing = false;
+                }, 500);
+            });
+        });
+
+        // homework-inner 04 - 로그인 검증 
+        document.forms[0].addEventListener('submit',function(e) {
+            e.preventDefault();
+        })
+
+        const idEl = document.forms[0].username;
+        // const idValue = idEl.value;
+        const idValue = idEl.value.trim();
+
+        // if (idValue === '') {
+        //     alert('아이디를 입력해주세요.');
+        //     return;
+        // };
+
+        // const pwEl = document.forms[0].password;
+        // const pwValue = pwEl.value;
+
+        // if (pwValue === '') {
+        //     alert('비밀번호를 입력해주세요.');
+        //     return;
+        // };
+
+        // this.submit();
+
+    </script>
+</body>
+</html>
